@@ -1,0 +1,283 @@
+/*Anpassungen für die Textdarstellung*/
+* {
+    color: black;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+p{
+    text-align: left;
+    font-size: clamp(14px, 2vw, 20px); /*Die Schriftgröße passt sich je nach Display automatisch an*/
+    font-weight: 300;
+}
+
+/*Das seitliche Menü*/
+.menueSeite {
+    display: flex-end;
+    /*margin left und right sollen die Sidebar für die Schriftkultur automatisch ausrichten*/
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    width: 200px; /*200px löschen*/
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 45em;  /*850px löschen*/
+    overflow: auto;
+}
+
+/* Die Links in dem seitlichen Menü */
+.menueSeite a {
+    display: block;
+    color: black; 
+    padding: 16px;
+    text-decoration: none; /*kein ersichtlicher Zweck, kann gelöscht werden*/
+}
+
+/* Die Farbe für den Home-Button */
+.menueSeite a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Farbveränderung der Links im seitlichen Menü beim Überfahren mit der Maus */
+.menueSeite a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/*Das Header-Bild*/
+.frontBild {
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+/*Der Text im Hauptbild*/
+.textBild {
+    position: absolute;
+    text-align: center;
+    font-size: 60px;
+    top: 300px;
+    left: 30%;
+    right: 20%;
+    bottom: auto;
+    color: white;
+    border: solid;
+    border-color: white;
+    padding: 20px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+    /*font-family: 'Signika Negative', sans-serif; löschen?*/
+}
+
+/*Das einzelne Diagramm-Bild im Text*/
+.diagramm {
+    float: right;
+    position: relative;
+}
+
+/*Die Grid-Container und die einzelnen Elemente*/
+.gridContainer {
+    display: grid;
+    gap: 5px;
+    background-color: rgba(151, 151, 151, 0.461);
+    padding: 10px 50px;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-template-rows: 25% 25% 25% 25%;
+}
+
+.grid-item {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px
+}
+
+.item0-0 {
+    grid-column: 1;
+    grid-row: 1/2;
+}
+
+.item0 {
+    grid-column: 2/ span 4;
+    grid-row: 1;
+}
+
+.item1 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.item2 {
+    grid-column: 3 / 5;
+    grid-row: 2;
+}
+
+.item3 {
+    grid-column: 2 / span 3;
+    grid-row: 3;
+}
+
+.item4 {
+    grid-column: 2 / span 4;
+    grid-row: 4;
+}
+
+.item5 {
+    grid-column: 2 / span 4;
+    grid-row: 5;
+
+}
+
+.item6 {
+    grid-column: 2 / span 4;
+    grid-row: 6;
+}
+
+.item7 {
+    grid-column: 2 / span 4;
+    grid-row: 7;
+}
+
+/*Anpassungen für die Tabelle*/
+table.tabelle {
+    margin: 3% 25%; /*Platzierung der gesamten Tabelle prozentual als relative Maßeinheit */
+}
+
+table.tabelle thead tr {
+    background-color: rgba(39, 201, 74, 0.772);
+    font-weight: bold;
+}
+
+table.tabelle th,
+table.tabelle th,
+table.tabelle td {
+    padding: 12px 16px;
+    border-bottom: 2px solid springgreen;
+}
+
+table.tabelle tbody td {
+    background-color: rgb(255, 255, 255);
+    
+}
+
+/*Die Filterbutton für die Tabelle*/
+.container {
+    overflow: hidden;
+}
+
+.filterDiv {
+    float:inline-start;
+    display: none;
+}
+
+/* Für die Anzeige aller Elemente, die gefiltert werden können */
+.show {
+    display: block;
+}
+
+/* Die Schaltergestaltung */
+.knopf {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+/* Effekt beim Rüberfahren mit der Maus */
+.knopf:hover {
+    background-color: springgreen;
+}
+
+/* Der Hintergrund bei aktiviertem Schalter */
+.knopf.alle {
+    background-color: #04AA6D;
+    color: white;
+}
+
+
+/*Das eingebundene YouTube-Video*/
+.youtube {
+    width: calc(100vw * 0.4);
+    height: calc(56.25vw * 0.4);
+}
+
+/*Die Links im Footer*/
+.linksFooter {
+    color: springgreen;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+/*Der umschließende Card-Block*/
+.card-body {
+    text-align: center;
+    background-color: #1f211e;
+    border-radius: 10px;
+}
+
+.linksFooter:hover {
+    text-decoration: underline;
+}
+
+
+/* Das seitliche Menü wird zu einem Menü am oberen Rand, bei Bildschirmen kleiner 850px */
+@media screen and (max-width: 850px) {
+    .menueSeite {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .menueSeite a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+
+/* Wird das Bild kleiner 850px werden die Container untereinander ausgerichtet */
+    .gridContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+/*Breakpoint für die Tabelle*/
+@media screen and (max-width: 730px) {
+    table.tabelle {
+        margin: 20px;
+        overflow-x: auto;
+    }
+}
+
+/*Anpassung des Textes im Bild*/
+@media screen and (max-width: 1110px) {
+    .textBild {
+        position: static;
+        text-align: center;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+       /* font-family: 'Signika Negative', sans-serif; löschen? */
+    }
+
+}
+
+/* Wir das Bild kleiner als 400px wird das Menü nach unten hin ausgerichtet */
+@media screen and (max-width: 400px) {
+    .menueSeite a {
+        text-align: center;
+        float: none;
+    }
+}
